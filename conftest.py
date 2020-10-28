@@ -18,8 +18,8 @@ def get_cookies():
     db = shelve.open("cookies")
     db['cookie'] = cookies
     db.close()
-    yield driver
-    driver.quit()
+    yield
+    #driver.quit()
     print("测试结束")
 
 @pytest.fixture(scope='function', autouse=True)
@@ -42,5 +42,5 @@ def driver():
 
 
 if __name__ == '__main__':
-    pytest.main(['-s','--env'])
+    pytest.main(['-s'])
 
