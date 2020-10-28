@@ -44,7 +44,7 @@ class BasePage:
         except:
             return False
 
-    def finds(self, by, locator, timeout):
+    def finds(self, by, locator, timeout=10):
         try:
             driver = self.driver
             elements = WebDriverWait(driver, timeout, 0.5).until(lambda driver: driver.find_elements(by, locator))
